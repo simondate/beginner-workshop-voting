@@ -17,14 +17,17 @@ const style = {
 // The Victory documentation is here: http://formidable.com/open-source/victory/docs/victory-bar/
 // For an extra challenge try not to use Victory ;)
 
-const BarChart = ({ answers }) => {
+const Chart = ({ answers }) => {
   // TODO: Add Victory props, or use something else?
-
   return (
     <VictoryBar
-      style={style}
-    />
+        data={answers.map(a => ({ option: a.answer, votes: a.votes }))}
+        x="option"
+        y={({ votes }) => votes}
+        labels={({ option }) => option}
+        style={style}
+      />
   )
 };
 
-export default BarChart;
+export default Chart;

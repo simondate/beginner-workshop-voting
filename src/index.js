@@ -13,7 +13,7 @@ import Vote from './Vote';
 
 render(
   <Provider store={store}>
-    <Welcome />
+    <Vote />
   </Provider>,
   document.getElementById('root')
 );

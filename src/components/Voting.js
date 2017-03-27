@@ -37,6 +37,13 @@ const Voting = ({ answers, onClick }) => (
   <Row>
     {
       /* TODO: Map `answers` to `Item` component */
+      answers.map(({ id }, key) => (
+  <Item
+      key={key}
+      onClick={() => onClick(id)}
+    > +1
+  </Item>
+))
     }
   </Row>
 );
